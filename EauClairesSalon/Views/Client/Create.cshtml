@@ -3,17 +3,29 @@
 }
 
 @model EauClairesSalon.Models.Client
+<main class="container">
+  <h4>Add a new client</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-<h4>Add a new task</h4>
+    @Html.LabelFor(model => model.CurlinessType)
+    @Html.DropDownList("StylistId")
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.StrandsType)
+    @Html.DropDownList("StylistId")
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+    @Html.LabelFor(model => model.VolumeType)
+    @Html.DropDownList("StylistId")
 
-  <input type="submit" value="Add new Client" class="btn btn-default" />
-}
-<p>@Html.ActionLink("Show all Clients", "Index")</p>
+    @Html.LabelFor(model => model.ContactNum)
+    @Html.TextBoxFor(model => model.ContactNum)
+
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
+
+    <button type="submit" value="Add new Client" class="btn btn-dark" />
+  }
+  <p>@Html.ActionLink("Show all Clients", "Index")</p>
+</main>
