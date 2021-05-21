@@ -1,4 +1,4 @@
-namespace ToDoList.Models
+namespace EauClairesSalon.Models
 {
   public class Item
   {

@@ -4,7 +4,7 @@ using ToDoList.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoList.Controllers
+namespace EauClairesSalon.Controllers
 {
   public class CategoriesController : Controller
   {
