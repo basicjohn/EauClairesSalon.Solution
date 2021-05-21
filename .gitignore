@@ -6,3 +6,4 @@ coverage/
 bin/
 obj/
 .vscode
+*/appsettings.json

@@ -1,5 +1,9 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using System;
+using EauClairesSalon.Models;
+using System.Collections.Generic;
+
 
 namespace EauClairesSalon
 {
