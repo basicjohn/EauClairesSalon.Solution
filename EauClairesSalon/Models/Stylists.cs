@@ -12,6 +12,12 @@ namespace EauClairesSalon.Models
 
     public int StylistId { get; set; }
     public string Name { get; set; }
+
+    public datetime EmploymentDate { get; set; }
+    public int ContactNum { get; set; }
+    public string Schedule { get; set; }
+
+
     public virtual ICollection<Client> Clients { get; set; }
   }
 }

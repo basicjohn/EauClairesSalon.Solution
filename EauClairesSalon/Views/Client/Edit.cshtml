@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model EauClairesSalon.Models.Item
+@model EauClairesSalon.Models.Client
 
 <h2>Edit</h2>
 
@@ -10,13 +10,13 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.ItemId)
+  @Html.HiddenFor(model => model.ClientId)
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
 
   <input type="submit" value="Save" />
 }
