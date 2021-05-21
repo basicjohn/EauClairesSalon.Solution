@@ -16,6 +16,15 @@
     @Html.LabelFor(model => model.StrandsType)
     @Html.DropDownList("StylistId")
 
+
+    @Html.DropDownList("Departments", new List<SelectListItem>
+{ 
+      new SelectListItem { Text = "unknown", Value = "unknown", Selected=true},
+      new SelectListItem { Text = "HR", Value = "2"},
+      new SelectListItem { Text = "Payroll", Value = "3"}
+
+}, "Select Strand Type") 
+
     @Html.LabelFor(model => model.VolumeType)
     @Html.DropDownList("StylistId")
 
