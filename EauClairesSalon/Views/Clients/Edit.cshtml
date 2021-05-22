@@ -1,0 +1,65 @@
+@{
+  Layout = "_Layout";
+}
+
+@model EauClairesSalon.Models.Client
+<main class="container">
+<h2>Edit</h2>
+
+<h4>Edit this Client: @Html.DisplayFor(model => model.Name)</h4>
+
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name,
+  new { required="required" })
+
+    @Html.DropDownList("CurlinessType", new List<SelectListItem>
+  {
+  new SelectListItem { Text = "Unknown Curliness type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "1a: Stick-straight.", Value = "1a: Stick-straight."},
+  new SelectListItem { Text = "1b: Straight but with a slight body wave adding some volume.", Value = "1b: Straight but with a slight body wave adding some volume."},
+  new SelectListItem { Text = "1c: Straight with body wave and one or two visible S-waves.", Value = "1c: Straight with body wave and one or two visible S-waves."},
+
+  new SelectListItem { Text = "2a: Loose with stretched S-waves throughout.", Value = "2a: Loose with stretched S-waves throughout."},
+  new SelectListItem { Text = "2b: Shorter with more distinct S-waves.", Value = "2b: Shorter with more distinct S-waves."},
+  new SelectListItem { Text = "2c: Distinct S-waves, some spiral curling.", Value = "2c: Distinct S-waves, some spiral curling."},
+
+  new SelectListItem { Text = "3a: Big, loose spiral curls.", Value = "3a: Big, loose spiral curls."},
+  new SelectListItem { Text = "3b: Bouncy ringlets.", Value = "3b: Bouncy ringlets."},
+  new SelectListItem { Text = "3c: Tight corkscrews.", Value = "3c: Tight corkscrews."},
+
+  new SelectListItem { Text = "4a: Tightly coiled S-curls.", Value = "4a: Tightly coiled S-curls."},
+  new SelectListItem { Text = "4b: Z-patterned", Value = "4b: Z-patterned"},
+  new SelectListItem { Text = "4c: Mostly Z-patterned", Value = "4c: Mostly Z-patterned"}
+  }, "Select Curliness Type")
+
+    @Html.DropDownList("StrandsType", new List<SelectListItem>
+  {
+  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "F: Fine", Value = "F: Fine"},
+  new SelectListItem { Text = "M: Medium", Value = "M: Medium"},
+  new SelectListItem { Text = "C: Coarse", Value = "C: Coarse"}
+  }, "Select Strand Type")
+
+    @Html.DropDownList("VolumeType", new List<SelectListItem>
+  {
+  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "i: Thin", Value = "i: Thin"},
+  new SelectListItem { Text = "ii: Normal", Value = "ii: Normal"},
+  new SelectListItem { Text = "iii: Thick", Value = "iii: Thick"}
+  }, "Select Volume Type")
+
+
+    @Html.LabelFor(model => model.ContactNum)
+    @Html.TextBoxFor(model => model.ContactNum,
+  new { required="required" })
+
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
+
+    <button href='@Url.Action("Index", "Clients")' type="submit" value="Edit Client" class="btn btn-dark" >Save Edited Client</button>
+  }
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+</main>

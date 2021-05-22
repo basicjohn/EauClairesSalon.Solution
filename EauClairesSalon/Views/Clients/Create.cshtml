@@ -8,7 +8,8 @@
   @using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name,
+  new { required="required" })
 
     @Html.DropDownList("CurlinessType", new List<SelectListItem>
   {
@@ -48,12 +49,12 @@
 
 
     @Html.LabelFor(model => model.ContactNum)
-    @Html.TextBoxFor(model => model.ContactNum)
+    @Html.TextBoxFor(model => model.ContactNum,
+  new { required="required" })
 
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")
 
-    <button type="submit" value="Add new Client" class="btn btn-dark" />
+    <button href='@Url.Action("Index", "Clients")' type="submit" value="Add new Client" class="btn btn-dark" >Add new client</button>
   }
-  <p>@Html.ActionLink("Show all Clients", "Index")</p>
 </main>
