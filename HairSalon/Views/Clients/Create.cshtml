@@ -2,12 +2,9 @@
   Layout = "_Layout";
 }
 
-@model EauClairesSalon.Models.Client
+@model HairSalon.Models.Client
 <main class="container">
-<h2>Edit</h2>
-
-<h4>Edit this Client: @Html.DisplayFor(model => model.Name)</h4>
-
+  <h4>Add a new client</h4>
   @using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.Name)
@@ -16,7 +13,7 @@
 
     @Html.DropDownList("CurlinessType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Curliness type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "unknown", Value = "unknown", Selected=true},
   new SelectListItem { Text = "1a: Stick-straight.", Value = "1a: Stick-straight."},
   new SelectListItem { Text = "1b: Straight but with a slight body wave adding some volume.", Value = "1b: Straight but with a slight body wave adding some volume."},
   new SelectListItem { Text = "1c: Straight with body wave and one or two visible S-waves.", Value = "1c: Straight with body wave and one or two visible S-waves."},
@@ -36,7 +33,7 @@
 
     @Html.DropDownList("StrandsType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "unknown", Value = "unknown", Selected=true},
   new SelectListItem { Text = "F: Fine", Value = "F: Fine"},
   new SelectListItem { Text = "M: Medium", Value = "M: Medium"},
   new SelectListItem { Text = "C: Coarse", Value = "C: Coarse"}
@@ -44,7 +41,7 @@
 
     @Html.DropDownList("VolumeType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "unknown", Value = "unknown", Selected=true},
   new SelectListItem { Text = "i: Thin", Value = "i: Thin"},
   new SelectListItem { Text = "ii: Normal", Value = "ii: Normal"},
   new SelectListItem { Text = "iii: Thick", Value = "iii: Thick"}
@@ -58,8 +55,6 @@
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")
 
-    <button href='@Url.Action("Index", "Clients")' type="submit" value="Edit Client" class="btn btn-dark" >Save Edited Client</button>
+    <button href='@Url.Action("Index", "Clients")' type="submit" value="Add new Client" class="btn btn-dark" >Add new client</button>
   }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
 </main>

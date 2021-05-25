@@ -1,11 +1,11 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System;
-using EauClairesSalon.Models;
+using HairSalon.Models;
 using System.Collections.Generic;
 
 
-namespace EauClairesSalon
+namespace HairSalon
 {
   public class Program
   {
