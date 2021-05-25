@@ -4,19 +4,19 @@
 
 @model HairSalon.Models.Client
 <main class="container">
-<h2>Edit</h2>
+<h1>Edit</h1>
 
-<h4>Edit this Client: @Html.DisplayFor(model => model.Name)</h4>
+<h2>Editing: @Html.DisplayFor(model => model.Name)</h2>
 
-  @using (Html.BeginForm())
+@using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name,
-  new { required="required" })
+  new { required="required", @class="form-control" })
 
     @Html.DropDownList("CurlinessType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Curliness type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "Select Curliness Type", Value = "unknown", Selected=true},
   new SelectListItem { Text = "1a: Stick-straight.", Value = "1a: Stick-straight."},
   new SelectListItem { Text = "1b: Straight but with a slight body wave adding some volume.", Value = "1b: Straight but with a slight body wave adding some volume."},
   new SelectListItem { Text = "1c: Straight with body wave and one or two visible S-waves.", Value = "1c: Straight with body wave and one or two visible S-waves."},
@@ -32,28 +32,28 @@
   new SelectListItem { Text = "4a: Tightly coiled S-curls.", Value = "4a: Tightly coiled S-curls."},
   new SelectListItem { Text = "4b: Z-patterned", Value = "4b: Z-patterned"},
   new SelectListItem { Text = "4c: Mostly Z-patterned", Value = "4c: Mostly Z-patterned"}
-  }, "Select Curliness Type")
-
+  }, new { @class="custom-select"})
+<br />
     @Html.DropDownList("StrandsType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "Select Strand Type", Value = "unknown", Selected=true},
   new SelectListItem { Text = "F: Fine", Value = "F: Fine"},
   new SelectListItem { Text = "M: Medium", Value = "M: Medium"},
   new SelectListItem { Text = "C: Coarse", Value = "C: Coarse"}
-  }, "Select Strand Type")
-
+  }, new { @class="custom-select"})
+<br />
     @Html.DropDownList("VolumeType", new List<SelectListItem>
   {
-  new SelectListItem { Text = "Unknown Strand Type", Value = "unknown", Selected=true},
+  new SelectListItem { Text = "Select Volume Type", Value = "unknown", Selected=true},
   new SelectListItem { Text = "i: Thin", Value = "i: Thin"},
   new SelectListItem { Text = "ii: Normal", Value = "ii: Normal"},
   new SelectListItem { Text = "iii: Thick", Value = "iii: Thick"}
-  }, "Select Volume Type")
+  }, new { @class="custom-select"})
+<br />
 
-
-    @Html.LabelFor(model => model.ContactNum)
+    @Html.LabelFor(model => model.ContactNum, "Contact Number")
     @Html.TextBoxFor(model => model.ContactNum,
-  new { required="required" })
+  new { required="required", @class="form-control" })
 
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")

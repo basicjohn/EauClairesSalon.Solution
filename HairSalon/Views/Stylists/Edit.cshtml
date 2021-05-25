@@ -13,19 +13,21 @@
     @Html.HiddenFor(model => model.StylistId)
 
     @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new { @class="form-control" })
 
     @Html.LabelFor(model => model.EmploymentDate)
     @Html.TextBoxFor(model => model.EmploymentDate,
-  new { @type = "date" , @value = DateTime.Now })
+  new { @type = "date" , @value = DateTime.Today, @class="form-control" })
 
-    @Html.LabelFor(model => model.ContactNum)
-    @Html.TextBoxFor(model => model.ContactNum)
+    @Html.LabelFor(model => model.ContactNum, "Contact Number")
+    @Html.TextBoxFor(model => model.ContactNum,
+  new { @class="form-control" })
 
     @Html.LabelFor(model => model.Schedule)
-    @Html.TextBoxFor(model => model.Schedule)
+    @Html.TextBoxFor(model => model.Schedule, new { @class="form-control" })
 
-    <input type="submit" value="Save" />
+    <input class="btn btn-dark" type="submit" value="Save" role="button" />
   }
-  <p>@Html.ActionLink("Back to list", "Index")</p>
+  <a class="btn btn-dark" href='@Url.Action("Index", "Stylists")' role="button" type="button">Back to Stylists</a>
+
 </main>

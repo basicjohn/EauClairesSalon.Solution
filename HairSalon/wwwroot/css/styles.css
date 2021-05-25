@@ -189,6 +189,9 @@ textarea {
 .custom-select {
   background-color: #fff;
   border-color: #eaecf3;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 /* Result Styles */

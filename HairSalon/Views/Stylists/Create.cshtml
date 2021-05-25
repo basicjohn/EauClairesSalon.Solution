@@ -14,14 +14,14 @@
     @Html.TextBoxFor(model => model.EmploymentDate,
   new { @type = "date" , @value = DateTime.Today, @class="form-control" })
 
-    @Html.LabelFor(model => model.ContactNum)
+    @Html.LabelFor(model => model.ContactNum, "Contact Number")
     @Html.TextBoxFor(model => model.ContactNum,
   new { @class="form-control" })
 
     @Html.LabelFor(model => model.Schedule)
     @Html.TextBoxFor(model => model.Schedule, new { @class="form-control" })
 
-    <input class="btn btn-dark" type="submit" value="Add new stylist" role="button" class="btn btn-dark" />
+    <input class="btn btn-dark" type="submit" value="Add new stylist" role="button" />
 
   }
   <a class="btn btn-dark" href='@Url.Action("Index", "Stylists")' role="button" type="button">Show All Stylists</a>

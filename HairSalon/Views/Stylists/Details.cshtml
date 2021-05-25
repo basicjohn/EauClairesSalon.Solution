@@ -11,6 +11,6 @@
   <p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId})</p>
   <p>@Html.ActionLink("Back to list", "Index")</p>
 
-  <button href='@Url.Action("Edit", "Stylists" , new { id = Model.StylistId})' type="button" class="btn btn-dark">Edit
-    Stylist</button>
+  <a href='@Url.Action("Edit", "Stylists" , new { id = Model.StylistId})' role="button" class="btn btn-dark">Edit
+    Stylist</a>
 </main>
