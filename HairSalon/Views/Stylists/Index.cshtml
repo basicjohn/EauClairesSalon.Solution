@@ -15,11 +15,11 @@
     @foreach (Stylist stylist in Model)
     {
       <div class="col-md-4 result">
-        <h3><a href='/stylist/@stylist.StylistId'>@stylist.Name</a></h3>
-        <p>Contact Number: <a href='tel:@stylist.ContactNum'>@stylist.ContactNum</a>
+        <h3><a href='/stylists/@stylist.StylistId'>@stylist.Name</a></h3>
+        <p>Contact Number: @stylist.ContactNum
           <br>Schedule: @stylist.Schedule
         </p>
-        <a class="btn, btn-dark" href='/stylist/@stylist.StylistId'>View Stylist Details</a>
+        <a class="btn, btn-dark" href='/stylists/@stylist.StylistId'>View Stylist Details</a>
       </div>
 
     }
@@ -34,5 +34,4 @@
       </div>
     </div>
   </div>
-
 </main>

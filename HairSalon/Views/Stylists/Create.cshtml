@@ -17,13 +17,13 @@
     @Html.LabelFor(model => model.ContactNum)
     @Html.TextBoxFor(model => model.ContactNum,
   new { @class="form-control" })
+
     @Html.LabelFor(model => model.Schedule)
     @Html.TextBoxFor(model => model.Schedule, new { @class="form-control" })
 
     <input class="btn btn-dark" type="submit" value="Add new stylist" role="button" class="btn btn-dark" />
 
   }
-  @* <p>@Html.ActionLink("Show all stylists", "Index")</p> *@
   <a class="btn btn-dark" href='@Url.Action("Index", "Stylists")' role="button" type="button">Show All Stylists</a>
 
 </main>

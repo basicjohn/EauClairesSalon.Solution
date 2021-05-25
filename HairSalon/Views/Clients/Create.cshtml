@@ -29,7 +29,7 @@
   new SelectListItem { Text = "4a: Tightly coiled S-curls.", Value = "4a: Tightly coiled S-curls."},
   new SelectListItem { Text = "4b: Z-patterned", Value = "4b: Z-patterned"},
   new SelectListItem { Text = "4c: Mostly Z-patterned", Value = "4c: Mostly Z-patterned"}
-  }, "Select Curliness Type")
+  }, "Select Curliness Type", new { @class="custom-select"})
 
     @Html.DropDownList("StrandsType", new List<SelectListItem>
   {
@@ -37,7 +37,7 @@
   new SelectListItem { Text = "F: Fine", Value = "F: Fine"},
   new SelectListItem { Text = "M: Medium", Value = "M: Medium"},
   new SelectListItem { Text = "C: Coarse", Value = "C: Coarse"}
-  }, "Select Strand Type")
+  }, "Select Strand Type", new { @class="custom-select"})
 
     @Html.DropDownList("VolumeType", new List<SelectListItem>
   {
@@ -45,7 +45,7 @@
   new SelectListItem { Text = "i: Thin", Value = "i: Thin"},
   new SelectListItem { Text = "ii: Normal", Value = "ii: Normal"},
   new SelectListItem { Text = "iii: Thick", Value = "iii: Thick"}
-  }, "Select Volume Type")
+  }, "Select Volume Type", new { @class="custom-select"})
 
 
     @Html.LabelFor(model => model.ContactNum)

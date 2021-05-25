@@ -4,18 +4,50 @@
 
 @using HairSalon.Models;
 @model List<HairSalon.Models.Client>;
+@* <main class="container">
+  <h1>Clients</h1>
+
+  @if (@Model.Count == 0)
+  {
+  <h3>No clients have been added yet!</h3>
+  }
+
+  @foreach (Client client in Model)
+  {
+  <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Name</li>
+  }
+
+  <p>@Html.ActionLink("Add new client", "Create")</p>
+  </main> *@
+
+
 <main class="container">
   <h1>Clients</h1>
 
   @if (@Model.Count == 0)
   {
-    <h3>No clients have been added yet!</h3>
+    <h3>No Clients have been added yet!</h3>
   }
-
-  @foreach (Client client in Model)
+  else
   {
-    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Name</li>
-  }
+    @foreach (Client client in Model)
+    {
+      <div class="col-md-4 result">
+        <h3>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</h3>
+        <p>Stylist: @client.Stylist.Name</p>
+        <a class="btn, btn-dark" href='/Clients/details/@client.ClientId/'>View Client Details</a>
+      </div>
 
-  <p>@Html.ActionLink("Add new client", "Create")</p>
+    }
+  }
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <a type="button" class="btn btn-dark" role="button" href='@Url.Action("Create", "Clients")'>Add new stylist</a>
+      </div>
+      <div class="col-md-6">
+        <a class="btn btn-dark" href='@Url.Action("Index", "Home")' role="button" type="button">Add a new vendor</a>
+      </div>
+    </div>
+  </div>
 </main>
