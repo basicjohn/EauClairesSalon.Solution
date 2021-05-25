@@ -10,14 +10,29 @@
   {
     <h3>No categories have been added yet!</h3>
   }
-
-  <ul>
+  else
+  {
     @foreach (Stylist stylist in Model)
     {
-      <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</li>
-    }
-  </ul>
+      <div class="col-md-4 result">
+        <h3><a href='/stylist/@stylist.StylistId'>@stylist.Name</a></h3>
+        <p>Contact Number: <a href='tel:@stylist.ContactNum'>@stylist.ContactNum</a>
+          <br>Schedule: @stylist.Schedule
+        </p>
+        <a class="btn, btn-dark" href='/stylist/@stylist.StylistId'>View Stylist Details</a>
+      </div>
 
-  <p>@Html.ActionLink("Add new stylist", "Create")</p>
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+    }
+  }
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <a type="button" class="btn btn-dark" role="button" href='@Url.Action("Create", "Stylists")'>Add new stylist</a>
+      </div>
+      <div class="col-md-6">
+        <a class="btn btn-dark" href='@Url.Action("Index", "Home")' role="button" type="button">Add a new vendor</a>
+      </div>
+    </div>
+  </div>
+
 </main>
